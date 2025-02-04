@@ -1,0 +1,16 @@
+[project]
+name = "ride-router"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "folium>=0.19.4",
+    "geopy>=2.4.1",
+    "googlemaps>=4.10.0",
+    "polyline>=2.0.2",
+    "python-dotenv>=1.0.1",
+    "scikit-learn>=1.6.1",
+    "streamlit>=1.41.1",
+    "streamlit-folium>=0.24.0",
+]
