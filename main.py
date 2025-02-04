@@ -1065,14 +1065,14 @@ def main():
                 try:
                     df = pd.read_csv(uploaded_file)
                     st.session_state.staff_data = optimizer.validate_staff_data(df)
-                    st.success("✅ Data validated successfully!")
+                    st.success("Data validated successfully!")
                 except Exception as e:
-                    st.error(f"❌ Error: {str(e)}")
+                    st.error(f"Error: {str(e)}")
                     st.session_state.staff_data = None
         else:
             if st.button("Load Sample Data"):
                 st.session_state.staff_data = optimizer.load_sample_data()
-                st.success("✅ Sample data loaded successfully!")
+                st.success("Sample data loaded successfully!")
         
         st.subheader("2. Route Parameters")
         grid_size = st.slider(
@@ -1116,15 +1116,15 @@ def main():
                             st.session_state.routes = optimizer.optimize_routes(clustered_data)
                             if st.session_state.routes:
                                 st.session_state.optimization_done = True
-                                st.success("✅ Routes optimized successfully!")
+                                st.success("Routes optimized successfully!")
                             else:
-                                st.error("❌ Route optimization failed. Try different parameters.")
+                                st.error("Route optimization failed. Try different parameters.")
                         else:
-                            st.error("❌ Clustering failed. Try different parameters.")
+                            st.error("Clustering failed. Try different parameters.")
                     except Exception as e:
-                        st.error(f"❌ Optimization error: {str(e)}")
+                        st.error(f"Optimization error: {str(e)}")
             else:
-                st.warning("⚠️ Please upload valid staff data first.")
+                st.warning("Please upload valid staff data first.")
 
     # Main content area
     if st.session_state.staff_data is not None:
